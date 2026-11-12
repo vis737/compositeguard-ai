@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   CompositeGuard AI design system
+   Ported from the sketch2app design (Apex Phantom) but re-themed to the
+   backend's palette: deep teal-black surfaces, teal/mint primary accents,
+   amber/red reserved for FMEA risk states returned by the API.
+   Every custom class below is referenced by src/App.jsx and must stay in
+   sync with whatever App.jsx uses. If you add/remove a class in App.jsx,
+   mirror that change here.
+--------------------------------------------------------------------------- */
+
+@theme {
+  --color-surface: #00080d;
+  --color-surface-dim: #00080d;
+  --color-surface-bright: #12313a;
+  --color-surface-container-lowest: #02090c;
+  --color-surface-container-low: #04141a;
+  --color-surface-container: #061d23;
+  --color-surface-container-high: #0a2a31;
+  --color-surface-container-highest: #0f3a42;
+  --color-surface-variant: #0f3a42;
+
+  --color-background: #00080d;
+  --color-on-background: #cfe8db;
+  --color-on-surface: #cfe8db;
+  --color-on-surface-variant: #9cc7c0;
+  --color-inverse-surface: #cfe8db;
+  --color-inverse-on-surface: #04141a;
+
+  --color-primary: #5ac8b4;
+  --color-on-primary: #00211d;
+  --color-primary-container: #2fb3a1;
+  --color-on-primary-container: #00120f;
+  --color-primary-fixed: #9fe8da;
+  --color-primary-fixed-dim: #4dbaa7;
+  --color-on-primary-fixed: #00201b;
+  --color-on-primary-fixed-variant: #003d34;
+
+  --color-secondary: #d6f6ee;
+  --color-on-secondary: #00312e;
+  --color-secondary-container: #78dcc8;
+  --color-on-secondary-container: #00312b;
+  --color-secondary-fixed: #a5ecd9;
+  --color-secondary-fixed-dim: #5cd0ba;
+
+  --color-outline: #3f6a65;
+  --color-outline-variant: #1c3a38;
+
+  /* FMEA risk states (semantic, driven by API risk_level) */
+  --color-risk-critical: #ff7a7a;
+  --color-risk-high: #ff9f6b;
+  --color-risk-medium: #f4c96b;
+  --color-risk-low: #9fd6a0;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, #021116 0%, #00080d 55%, #000000 100%)
+      #00080d;
+    background-attachment: fixed;
+    color: #cfe8db;
+    font-family: "Manrope", sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Material Symbols Outlined helper (same as design source) */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar, re-themed */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #02090c;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a2a31;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5ac8b4;
+}
+
+/* ---- keep every custom className App.jsx references in sync here ---- */
+
+/* FMEA risk-state glows (semantic, driven by API risk_level) */.guard-glow-teal { box-shadow: 0 0 35px -5px rgba(90, 200, 180, 0.25); }.guard-glow-mint { box-shadow: 0 0 35px -5px rgba(120, 220, 200, 0.22); }  
+
+
+
+.guard-glow-teal-test { box-shadow: 0 0 0 0 red; }
+/* placeholder */
+
+/* Faint inspection grid band */
+.faint-grid {
+  background-image:
+    linear-gradient(rgba(120,220,200,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,220,200,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Motion accents */
+@keyframes guard-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: guard-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+
+@keyframes guard-shine {
+  0% { transform: translateX(-140%); }
+  100% { transform: translateX(320%); }
+}
+.bar-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 35%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: guard-shine 2.6s ease-in-out infinite;
+}
+
+@keyframes guard-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: guard-float 6s ease-in-out infinite; }
+
+@keyframes guard-gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.text-gradient-guard {
+  background: linear-gradient(100deg, #5ac8b4 10%, #d6f6ee 45%, #5ac8b4 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: guard-gradient-pan 8s ease-in-out infinite;
+}
+
+/* Typography utilities */
+.font-display-hero { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.02em; }
+.font-headline-lg { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.01em; }
+.font-headline-sm { font-family: 'Playfair Display', Georgia, serif; }
+.font-technical-metric { font-family: 'Manrope', sans-serif; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.font-label-caps { font-family: 'Manrope', sans-serif; letter-spacing: 0.18em; }
+.font-label-telemetry { font-family: 'Manrope', sans-serif; letter-spacing: 0.14em; }

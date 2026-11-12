@@ -1,0 +1,24 @@
+Port 5173 is in use, trying another one...
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m312[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5174[22m/[39m
+[2m9:17:37 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.design-src/index.html[22m
+[2m9:17:37 pm[22m [36m[1m[vite][22m[39m changed tsconfig file detected: E:\compositeguard-ai\.design-src\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m9:17:37 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.design-src/public/assets/aistudio/Image_2_930c98e1.html[22m
+[2m9:23:14 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m9:28:01 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
+[2m9:36:50 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m9:49:48 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m10:17:56 pm[22m [36m[1m[vite][22m[39m changed tsconfig file detected: E:\compositeguard-ai\.design-src\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m10:17:56 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.design-src/index.html[22m
+[2m10:17:56 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.design-src/public/assets/aistudio/Image_2_930c98e1.html[22m
+[2m10:33:50 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m10:34:08 pm[22m [36m[1m[vite][22m[39m [32mvite.config.js changed, restarting server...[39m
+[2m10:34:08 pm[22m [36m[1m[vite][22m[39m server restarted.
+[2m10:34:58 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mlogs/inspections.jsonl[22m
+[2m10:35:23 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mlogs/inspections.jsonl[22m
+[2m10:36:28 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mlogs/inspections.jsonl[22m
+[2m10:39:45 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mlogs/inspections.jsonl[22m
+[2m10:44:01 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mlogs/inspections.jsonl[22m
+[2m10:54:48 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mlogs/inspections.jsonl[22m
